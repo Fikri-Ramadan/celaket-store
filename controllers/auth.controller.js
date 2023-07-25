@@ -1,3 +1,5 @@
+const path = require("path");
+
 const User = require("../models/users");
 
 let errorData;
@@ -17,7 +19,7 @@ function getLoginPage(req, res) {
         message: "",
     };
 
-    res.render("login", { errorMessage: message });
+    res.render("login", { errorMessage: message, root: path.join(__dirname, "public") });
 }
 
 function getSignupPage(req, res) {
