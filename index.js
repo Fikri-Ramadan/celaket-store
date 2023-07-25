@@ -16,5 +16,5 @@ app.use(express.urlencoded({ extended: false }));
 app.use(authRoutes);
 
 db.connectToDatabse().then(() => {
-    app.listen("3001");
+    app.listen(process.env.PORT);
 });
