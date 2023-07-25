@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "public": true,
     "builds": [
         {
             "src": "./index.js",
@@ -14,6 +15,14 @@
         {
             "src": "/(.*)",
             "dest": "/"
+        },
+        {
+            "src": "/((?!.*\\.\\w+$).*)",
+            "dest": "/index.js"
+        },
+        {
+            "src": "/(.+\\.[a-z]+)$",
+            "dest": "/public/$1"
         }
     ]
 }
