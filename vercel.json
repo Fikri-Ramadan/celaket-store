@@ -16,7 +16,7 @@
             "dest": "/"
         },
         {
-            "src": "./public/**",
+            "src": "./public",
             "dest":"/styles" 
         }
     ]
