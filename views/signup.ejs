@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Daftar | Celaket Store</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" /><link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+        /><link
+            href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" type="text/css" href="styles/login.css" />
+    </head>
+    <body id="bg-login">
+        <div class="box-login">
+            <h2>Daftar</h2>
+            <form action="/signup" method="POST">
+                <% if (errorMessage) { %>
+                <p class="error"><%= errorMessage %></p>
+                <% } %>
+                <input
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                    class="input-control"
+                />
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    class="input-control"
+                />
+                <input
+                    type="password"
+                    name="confirmPassword"
+                    placeholder="Confirm Password"
+                    class="input-control"
+                />
+                <input type="submit" class="btn" />
+            </form>
+        </div>
+    </body>
+</html>
