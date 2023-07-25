@@ -1,13 +1,12 @@
 {
     "version": 2,
-    "public": true,
     "builds": [
         {
             "src": "./index.js",
             "use": "@vercel/node"
         },
         {
-            "src": "public/**",
+            "src": "./public/**",
             "use": "@vercel/static"
         }
     ],
@@ -15,14 +14,6 @@
         {
             "src": "/(.*)",
             "dest": "/"
-        },
-        {
-            "src": "/((?!.*\\.\\w+$).*)",
-            "dest": "/index.js"
-        },
-        {
-            "src": "/(.+\\.[a-z]+)$",
-            "dest": "/public/$1"
         }
     ]
 }
