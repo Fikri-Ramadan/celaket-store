@@ -10,10 +10,8 @@ const authRoutes = require("./routes/auth.routes");
 
 const app = express();
 
-let url = "mongodb://127.0.0.1:27017/celaket-store";
-
 const store = new MongoDBStore({
-    uri: "mongodb://127.0.0.1:27017",
+    uri: process.env.MONGODB_URL || "mongodb://127.0.0.1:27017",
     databaseName: "celaket-store",
     collection: "sessions",
 });
