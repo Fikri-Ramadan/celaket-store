@@ -19,7 +19,10 @@ function getLoginPage(req, res) {
         message: "",
     };
 
-    res.render("login", { errorMessage: message, root: path.join(__dirname, "public") });
+    res.render("login", {
+        errorMessage: message,
+        root: path.join(__dirname, "public"),
+    });
 }
 
 function getSignupPage(req, res) {
@@ -88,7 +91,16 @@ async function login(req, res) {
 
         return res.redirect("/login");
     }
+
+    req.session.isAuth = true;
+
     res.redirect("/home");
+}
+
+function logout(req, res) {
+    req.session.destroy();
+    
+    res.redirect("/login");
 }
 
 module.exports = {
@@ -96,4 +108,5 @@ module.exports = {
     getSignupPage: getSignupPage,
     signUp: signUp,
     login: login,
+    logout: logout,
 };

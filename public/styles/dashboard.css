@@ -1,0 +1,10 @@
+.nav-item form {
+    height: 100%;
+    display: flex;
+}
+
+.logout {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
